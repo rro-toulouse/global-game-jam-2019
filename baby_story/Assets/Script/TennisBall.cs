@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Speed : MonoBehaviour
+public class TennisBall : MonoBehaviour
 {
 
     public float velX;
@@ -14,9 +14,10 @@ public class Speed : MonoBehaviour
         rb.AddForce(new Vector3(velX, 0, velZ), ForceMode.Impulse);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void OnMouseDown()
     {
-
+        var rb = GetComponent<Rigidbody>();
+        rb.velocity = Quaternion.Euler(0, 180, 0) * rb.velocity;
     }
 
     // Update is called once per frame
