@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6959258864204404564}
   - component: {fileID: 1929855255627848711}
   - component: {fileID: 1279035097588740158}
-  m_Layer: 0
-  m_Name: Cube
+  m_Layer: 8
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604607522580463336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.81, y: 0, z: 0}
-  m_LocalScale: {x: 0.25222, y: 1, z: 10.725}
+  m_LocalPosition: {x: 4.81, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 3, z: 10.725}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,7 +85,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604607522580463336}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 476b361582a110c4983418d5d7d421f2, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
