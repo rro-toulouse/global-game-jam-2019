@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class MenuButtonHandler : MonoBehaviour
 {
-    private static bool highscoreActive = true;
-    private static bool creditsActive = true;
+    private static bool highscoreActive = false;
+    private static bool creditsActive = false;
 
     public void playButton()
     {
@@ -16,32 +16,55 @@ public class MenuButtonHandler : MonoBehaviour
 
     public void highscoreButton()
     {
-        GameObject highscoreList = GameObject.FindGameObjectWithTag("Highscore");
-
-        if (highscoreList)
+        if (setHighscoreVisibility(!highscoreActive))
         {
-            highscoreList.GetComponent<UnityEngine.UI.Text>().enabled = highscoreActive;
             highscoreActive = !highscoreActive;
+            if (setCreditsVisibility(false))
+                creditsActive = false;
         }
+
     }
 
     public void creditsButton()
     {
-        GameObject[] creditPictureList = GameObject.FindGameObjectsWithTag("CreditPicture");
-
-
-        if (creditPictureList != null)
+        if (setCreditsVisibility(!creditsActive))
         {
-            foreach (GameObject creditPicture in creditPictureList)
-            {
-                creditPicture.GetComponent<Image>().enabled = creditsActive;
-            }
             creditsActive = !creditsActive;
+            if (setHighscoreVisibility(false))
+                highscoreActive = false;
         }
     }
 
     public void quitButton()
     {
         Application.Quit();
+    }
+
+    private bool setCreditsVisibility(bool visibility)
+    {
+        GameObject[] creditPictureList = GameObject.FindGameObjectsWithTag("CreditPicture");
+
+        if (creditPictureList != null)
+        {
+            foreach (GameObject creditPicture in creditPictureList)
+                creditPicture.GetComponent<Image>().enabled = visibility;
+        }
+        else
+            return false;
+        return true;
+    }
+
+    /**
+     * Internal mechanics menu 
+     */
+    private bool setHighscoreVisibility(bool visibility)
+    {
+        GameObject highscoreList = GameObject.FindGameObjectWithTag("Highscore");
+
+        if (highscoreList)
+            highscoreList.GetComponent<UnityEngine.UI.Text>().enabled = visibility;
+        else
+            return false;
+        return true;
     }
 }
