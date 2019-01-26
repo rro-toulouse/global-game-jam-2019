@@ -38,7 +38,7 @@ public class Scissors : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby cuts itself");
-            babyHealth.TakeDamage(10);
+            babyHealth.RemoveHealth(10);
             Destroy(gameObject);
         }
     }
