@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuButtonHandler : MonoBehaviour
+public class ButtonHandler : MonoBehaviour
 {
     private static bool highscoreActive = false;
     private static bool creditsActive = false;
@@ -52,6 +52,11 @@ public class MenuButtonHandler : MonoBehaviour
         else
             return false;
         return true;
+    }
+
+    public void menuButton()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 
     /**

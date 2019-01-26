@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Highscore
   - CreditPicture
+  - Item
+  - Baby
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
