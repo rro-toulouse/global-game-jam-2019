@@ -10,9 +10,12 @@ public class BouncyBall : MonoBehaviour
     public float lifetime;
     public int maxHits;
     public int maxRebounds;
+
+    private bool evanescent;
     // Start is called before the first frame update
     void Start()
     {
+        evanescent = lifetime > 0;
         var rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(velX, 0, velZ) * rb.mass, ForceMode.Impulse);
     }
@@ -41,6 +44,10 @@ public class BouncyBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (evanescent)
+        {
+            lifetime -= Time.deltaTime;
+            if (lifetime <= 0.0f) Destroy(gameObject);
+        }
     }
 }
