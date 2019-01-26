@@ -9,10 +9,7 @@ public class Baby : MonoBehaviour
     float xNextDoor;
     float yNextDoor;
     int moveInRoom;
-
-
-
-
+    
     private void OnCollisionEnter(Collider other)
     {
         float newRotate = 0.0f;

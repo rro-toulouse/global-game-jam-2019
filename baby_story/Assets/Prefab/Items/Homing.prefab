@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velX: 0
-  velZ: 0
+  velZ: 10
   lifetime: 0
   maxHits: 0
   maxRebounds: 0
