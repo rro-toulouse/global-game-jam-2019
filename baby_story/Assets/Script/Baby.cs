@@ -9,10 +9,17 @@ public class Baby : MonoBehaviour
     float xNextDoor;
     float yNextDoor;
     int moveInRoom;
+
+
+
+
+
+   /* private void OnCollisionEnter(Collider other)
+
     
-    private void OnCollisionEnter(Collider other)
+    
     {
-        float newRotate = 0.0f;
+        /*float newRotate = 0.0f;
         float currentRotate=this.transform.localRotation.y;
 
         newRotate=currentRotate <= 180 ?  currentRotate + 180 :  currentRotate - 180;
@@ -21,13 +28,14 @@ public class Baby : MonoBehaviour
 
         rb.velocity=(transform.forward );
     }
+    */
 
     private void OnTriggerEnter(Collider other)
     {
         Vector3 triScale =other.transform.localScale;
-        float currentRoomSize= triScale.x + triScale.y;
-        Debug.Log(currentRoomSize);
+        currentRoomSize= triScale.x + triScale.z;
         moveInRoom = 0;
+        Debug.Log(currentRoomSize);
     }
 
     void Update()
@@ -38,8 +46,8 @@ public class Baby : MonoBehaviour
             Rigidbody rb = GetComponent<Rigidbody>();
             this.transform.Rotate(new Vector3(0, Random.Range(0.0f, 360.0f), 0));
             rb.velocity=(transform.forward );
-            timeTillChangement = Random.Range(7, currentRoomSize);
-            Debug.Log(timeTillChangement);
+            timeTillChangement = Random.Range(7.0f, currentRoomSize);
+            
         }
     }
 }

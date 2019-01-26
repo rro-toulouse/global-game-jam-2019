@@ -10,6 +10,7 @@ TagManager:
   - Item
   - Wall
   - Consumable
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
