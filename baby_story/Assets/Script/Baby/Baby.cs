@@ -14,6 +14,10 @@ public class Baby : MonoBehaviour
     float currentOrientation;
     public NavMeshAgent agent;
     Vector3 destination = new Vector3();
+    public float lowZ;
+    public float highZ;
+    public float lowX;
+    public float highX;
 
 
 
@@ -62,7 +66,8 @@ public class Baby : MonoBehaviour
         {
 
 
-            destination = new Vector3(Random.Range(-18, 18), 0, Random.Range(-6, 14));
+            destination = new Vector3(Random.Range(lowX, highX), 0, Random.Range(lowZ, highZ));
+
             agent.SetDestination(destination);
             /*
             this.transform.Rotate(new Vector3(0, Random.Range(0.0f, 360.0f), 0));

@@ -16,4 +16,9 @@ public class CameraScript : MonoBehaviour
         this.transform.position = new Vector3(baby.transform.position.x, this.transform.position.y, baby.transform.position.z);
 
     }
+
+    void onCameraZoom()
+    {
+        this.transform.position -= new Vector3(baby.transform.position.x, this.transform.position.y -2.0f, baby.transform.position.z);
+    }
 }
