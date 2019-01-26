@@ -53,7 +53,7 @@ public class BabyHealthBar : MonoBehaviour
         damaged = false;
     }
 
-    public void EarnHealth(int amount)
+    public void AddHealth(int amount)
     {
 
         // Set the damaged flag so the screen will flash.
@@ -74,7 +74,7 @@ public class BabyHealthBar : MonoBehaviour
         Debug.Log("I earnt " + amount + " hp. HP: " + currentHealth);
     }
 
-    public void TakeDamage(int amount)
+    public void RemoveHealth(int amount)
     {
 
         // Set the damaged flag so the screen will flash.
