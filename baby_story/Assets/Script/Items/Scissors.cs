@@ -11,9 +11,16 @@ public class Scissors : MonoBehaviour
     public int maxRebounds;
 
     private bool evanescent;
+    private GameObject baby;
+    private BabyHealthBar babyHealth;
+    private BabyPooBar babyPoo;
     // Start is called before the first frame update
     void Start()
     {
+        baby = GameObject.FindGameObjectWithTag("Baby");
+        babyHealth = baby.GetComponent<BabyHealthBar>();
+        babyPoo = baby.GetComponent<BabyPooBar>();
+
         evanescent = lifetime > 0;
         var rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(velX, 0, velZ) * rb.mass, ForceMode.Impulse);
@@ -31,6 +38,7 @@ public class Scissors : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby cuts itself");
+            babyHealth.TakeDamage(10);
             Destroy(gameObject);
         }
     }
