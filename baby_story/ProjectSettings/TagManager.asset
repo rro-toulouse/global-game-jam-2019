@@ -6,8 +6,10 @@ TagManager:
   tags:
   - Highscore
   - CreditPicture
-  - Item
   - Baby
+  - Item
+  - Wall
+  - Consumable
   - PauseMenu
   layers:
   - Default
@@ -18,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Wall
+  - Items
+  - Baby
   - 
   - 
   - 
