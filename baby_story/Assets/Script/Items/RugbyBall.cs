@@ -21,7 +21,7 @@ public class RugbyBall : MonoBehaviour
     void OnMouseDown()
     {
         var rb = GetComponent<Rigidbody>();
-        rb.velocity = Quaternion.Euler(0, 180 + Mathf.Rad2Deg * Mathf.PI * Random.Range(1 - cone, 1 + cone), 0) * rb.velocity;
+        rb.velocity = Quaternion.Euler(0, 180 + Mathf.Rad2Deg * Mathf.PI * Random.Range(-cone/2, cone/2), 0) * rb.velocity;
     }
 
     private void OnCollisionEnter(Collision collision)
