@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Highscore
   - CreditPicture
+  - Baby
+  - Item
+  - Wall
+  - Consumable
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Wall
+  - Items
+  - Baby
   - 
   - 
   - 
