@@ -11,14 +11,10 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawn(sons, speed);
-        spawn(sons, speed);
-        spawn(sons, speed);
-        spawn(sons, speed);
-        spawn(sons, speed);
+  
     }
 
-    void spawn(GameObject son, float speed)
+   public void spawn(GameObject son, float speed)
     {
         var normal = this.transform.forward;
         var length = this.transform.localScale.x;
