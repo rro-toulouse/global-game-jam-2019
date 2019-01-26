@@ -1981,6 +1981,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1113711501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113711494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a42698b3c89064fb9f14cc292fd701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeight: 0
+  startWeight: 0
+  maxWeight: 100
+  maxScale: 0.5
 --- !u!1001 &1113775023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3788,7 +3804,7 @@ PrefabInstance:
     - target: {fileID: 1373144745646847576, guid: 747c06c08f3687849b3094d222de2793,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5207861
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1373144745646847576, guid: 747c06c08f3687849b3094d222de2793,
         type: 3}
@@ -3803,7 +3819,7 @@ PrefabInstance:
     - target: {fileID: 1373144745646847576, guid: 747c06c08f3687849b3094d222de2793,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8536872
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1373144745646847576, guid: 747c06c08f3687849b3094d222de2793,
         type: 3}
@@ -3813,7 +3829,7 @@ PrefabInstance:
     - target: {fileID: 1373144745646847576, guid: 747c06c08f3687849b3094d222de2793,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 62.77
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1373144745646847576, guid: 747c06c08f3687849b3094d222de2793,
         type: 3}
@@ -3916,7 +3932,7 @@ PrefabInstance:
     - target: {fileID: 2706278860352134177, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2706278860352134181, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
@@ -4026,22 +4042,22 @@ PrefabInstance:
     - target: {fileID: 2706278859239494276, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706278859501960615, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706278859309500094, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706278860103101475, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706278859318129924, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
