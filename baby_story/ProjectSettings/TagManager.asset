@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Consumable
   - PauseMenu
+  - Daddy
   layers:
   - Default
   - TransparentFX

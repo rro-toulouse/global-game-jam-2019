@@ -31,7 +31,6 @@ public class SpawnerManager : MonoBehaviour
     public GameObject tidePod;
     public GameObject vase;
 
-
     GameObject[] wall;
     List<Spawner> spawners = new List<Spawner>();
     GameObject[] neutral;
@@ -42,7 +41,6 @@ public class SpawnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         wall = GameObject.FindGameObjectsWithTag("Wall");
         foreach (GameObject item in wall)
         {
