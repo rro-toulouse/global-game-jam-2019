@@ -40,8 +40,8 @@ public class Javel : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby cuts itself");
-            babyHealth.TakeDamage(damages);
-            babyPoo.EarnPoo(food);
+            babyHealth.RemoveHealth(damages);
+            babyPoo.AddPoo(food);
             Destroy(gameObject);
         }
     }

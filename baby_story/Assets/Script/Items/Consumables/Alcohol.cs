@@ -40,7 +40,7 @@ public class Alcohol : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby eat cupcake");
-            babyPoo.EarnPoo(food);
+            babyPoo.AddPoo(food);
             Destroy(gameObject);
         }
     }
