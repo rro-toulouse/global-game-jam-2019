@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
-    public float timer = 5f;
+    public float defaultTimer = 5f;
     public GameObject cupCake;
     public GameObject tennisBall;
     public GameObject bouncyBall;
     public GameObject rugbyBall;
     public GameObject homing;
     public GameObject sissors;
+
+    float timer;
+
     GameObject[] wall;
     List<Spawner> spawners = new List<Spawner>();
     Random random = new Random();
@@ -19,7 +22,8 @@ public class SpawnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer = defaultTimer;
+
         wall = GameObject.FindGameObjectsWithTag("Wall");
         foreach (GameObject item in wall)
         {
@@ -42,7 +46,7 @@ public class SpawnerManager : MonoBehaviour
             GameObject selectedObject = sons[Random.Range(0, sons.Length)];
             float objectSpeed = Random.Range(1, 10);
             selectedSpawn.spawn(selectedObject, objectSpeed);
-            timer = 5f;
+            timer = defaultTimer;
         }
     }
 }
