@@ -20,7 +20,6 @@ public class Spawner : MonoBehaviour
             new_item.transform.position = new Vector3(new_item.transform.position.x,
                                                         new_item.transform.position.y + delta_y * i,
                                                         new_item.transform.position.z);
-            Debug.Log(this.transform.position);
             poped.Add(new_item);
         }
         foreach (var item in poped)
