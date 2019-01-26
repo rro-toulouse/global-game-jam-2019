@@ -54,7 +54,7 @@ public class Soap : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby new diaper");
-            babyPoo.CleanPoo(healPoop);
+            babyPoo.RemovePoo(healPoop);
             Destroy(gameObject);
         }
 

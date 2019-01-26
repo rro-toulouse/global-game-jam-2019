@@ -53,8 +53,8 @@ public class Biberon : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby heals itself");
-            babyHealth.EarnHealth(heal);
-            babyPoo.EarnPoo(food);
+            babyHealth.AddHealth(heal);
+            babyPoo.AddPoo(food);
             Destroy(gameObject);
         }
 

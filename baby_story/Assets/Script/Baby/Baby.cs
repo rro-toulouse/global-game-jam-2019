@@ -47,34 +47,33 @@ public class Baby : MonoBehaviour
         
         if (other.tag == "Wall")
         {
-            Debug.Log("trig2");
+            
             Vector3 triScale = other.transform.localScale;
             currentRoomSize = triScale.x + triScale.z;
             moveInRoom = 0;
-            Debug.Log(currentRoomSize);
+            
         }
     }
 
     void Update()
     {
-        currentOrientation = this.transform.rotation.y;
+       
         timeInMovement+= Time.deltaTime;
         timeTillChangement -= Time.deltaTime;
         Rigidbody rb = GetComponent<Rigidbody>();
-        Debug.Log(agent.velocity);
-        if(timeTillChangement <= 0 || (agent.velocity== new Vector3(0,0,0) && timeInMovement>1))
+        
+        if(timeTillChangement <= 0 || (agent.velocity== new Vector3(0,0,0) ))
         {
-
-
             destination = new Vector3(Random.Range(lowX, highX), 0, Random.Range(lowZ, highZ));
-
+            Debug.Log(destination + "||" + this.transform.position);
             agent.SetDestination(destination);
-            /*
-            this.transform.Rotate(new Vector3(0, Random.Range(0.0f, 360.0f), 0));
-            rb.velocity=(transform.forward * 2);*/
             timeTillChangement = Random.Range(7.0f, 15.0f);
             timeInMovement = 0;
             
         }
+    }
+     void Start()
+    {
+        Debug.Log("Creation");
     }
 }

@@ -41,8 +41,8 @@ public class Cupcake : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby eat cupcake");
-            babyHealth.EarnHealth(heal);
-            babyPoo.EarnPoo(food);
+            babyHealth.AddHealth(heal);
+            babyPoo.AddPoo(food);
             Destroy(gameObject);
         }
     }
