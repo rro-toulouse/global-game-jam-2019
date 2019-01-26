@@ -32,6 +32,12 @@ public class Scissors : MonoBehaviour
         }
     }
 
+    void OnMouseDown()
+    {
+        var rb = GetComponent<Rigidbody>();
+        rb.velocity = Quaternion.Euler(0, 180, 0) * rb.velocity;
+    }
+
     // Update is called once per frame
     void Update()
     {
