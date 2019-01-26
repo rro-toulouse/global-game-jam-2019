@@ -11,7 +11,7 @@ public class ButtonHandler : MonoBehaviour
 
     public void playButton()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainLevel", LoadSceneMode.Single);
     }
 
     public void highscoreButton()
