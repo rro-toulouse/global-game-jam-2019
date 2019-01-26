@@ -2,22 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cupcake : MonoBehaviour
+public class Alcohol : MonoBehaviour
 {
     public float velX;
     public float velZ;
 
     public float lifetime;
     public int maxRebounds;
+    public int food;
 
     private bool evanescent;
+    private GameObject baby;
+    private BabyHealthBar babyHealth;
+    private BabyPooBar babyPoo;
     // Start is called before the first frame update
     void Start()
     {
+        baby = GameObject.FindGameObjectWithTag("Baby");
+        babyHealth = baby.GetComponent<BabyHealthBar>();
+        babyPoo = baby.GetComponent<BabyPooBar>();
+
         evanescent = lifetime > 0;
         var rb = GetComponent<Rigidbody>();
         //rb.AddForce(new Vector3(velX, 0, velZ) * rb.mass, ForceMode.Impulse);
-        var baby = GameObject.FindGameObjectWithTag("Baby");
         rb.AddForce((baby.transform.position - transform.position).normalized * 3 * rb.mass, ForceMode.Impulse);
     }
 
@@ -33,6 +40,7 @@ public class Cupcake : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby eat cupcake");
+            babyPoo.EarnPoo(food);
             Destroy(gameObject);
         }
     }
