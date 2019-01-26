@@ -52,7 +52,7 @@ public class BabyPooBar : MonoBehaviour
         pooing = false;
     }
 
-    public void EarnPoo(int amount)
+    public void AddPoo(int amount)
     {
 
         // Set the damaged flag so the screen will flash.
@@ -73,7 +73,7 @@ public class BabyPooBar : MonoBehaviour
         Debug.Log("I earnt " + amount + " poo. Poo: " + currentPoo);
     }
 
-    public void CleanPoo(int amount)
+    public void RemovePoo(int amount)
     {
 
         // Reduce the current health by the damage amount.

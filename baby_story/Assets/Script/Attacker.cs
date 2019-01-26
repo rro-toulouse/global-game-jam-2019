@@ -7,6 +7,7 @@ public class Attacker : MonoBehaviour
     GameObject baby;
     BabyHealthBar babyHealth;
     BabyPooBar babyPoo;
+    BabyWeight babyWeight;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class Attacker : MonoBehaviour
         baby = GameObject.FindGameObjectWithTag("Baby");
         babyHealth = baby.GetComponent<BabyHealthBar>();
         babyPoo = baby.GetComponent<BabyPooBar>();
+        babyWeight = baby.GetComponent<BabyWeight>();
     }
 
     // Update is called once per frame
@@ -21,19 +23,27 @@ public class Attacker : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            babyHealth.TakeDamage(10);
+            babyHealth.RemoveHealth(10);
         }
         else if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            babyHealth.EarnHealth(14);
+            babyHealth.AddHealth(14);
         }
         else if (Input.GetKeyDown(KeyCode.J))
         {
-            babyPoo.EarnPoo(14);
+            babyPoo.AddPoo(14);
         }
         else if (Input.GetKeyDown(KeyCode.K))
         {
-            babyPoo.CleanPoo(17);
+            babyPoo.RemovePoo(17);
+        }
+        else if (Input.GetKeyDown(KeyCode.G))
+        {
+            babyWeight.AddWeight(17);
+        }
+        else if (Input.GetKeyDown(KeyCode.H))
+        {
+            babyWeight.RemoveWeight(17);
         }
     }
 }
