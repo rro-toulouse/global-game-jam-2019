@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scissors : MonoBehaviour
+public class Javel : MonoBehaviour
 {
     public float velX;
     public float velZ;
 
     public float lifetime;
     public int maxRebounds;
+    public int damages;
+    public int food;
 
     private bool evanescent;
     private GameObject baby;
@@ -30,7 +32,7 @@ public class Scissors : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Wall")
         {
-            if (maxRebounds>0 && --maxRebounds == 0)
+            if (maxRebounds > 0 && --maxRebounds == 0)
             {
                 Destroy(gameObject);
             }
@@ -38,7 +40,8 @@ public class Scissors : MonoBehaviour
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby cuts itself");
-            babyHealth.RemoveHealth(10);
+            babyHealth.RemoveHealth(damages);
+            babyPoo.AddPoo(food);
             Destroy(gameObject);
         }
     }
