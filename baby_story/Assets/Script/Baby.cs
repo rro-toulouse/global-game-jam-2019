@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Baby : MonoBehaviour
 {
-
-
     float timeTillChangement;
     float currentRoomSize;
     float xNextDoor;
@@ -15,7 +13,11 @@ public class Baby : MonoBehaviour
 
 
 
+
    /* private void OnCollisionEnter(Collider other)
+
+    
+    
     {
         /*float newRotate = 0.0f;
         float currentRotate=this.transform.localRotation.y;
@@ -48,8 +50,4 @@ public class Baby : MonoBehaviour
             
         }
     }
-
-
-
-
 }
