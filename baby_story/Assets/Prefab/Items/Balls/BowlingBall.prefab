@@ -154,3 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
+  sampleList:
+  - {fileID: 8300000, guid: 645e925659803c04c8d6119c45b2f306, type: 3}
+  - {fileID: 8300000, guid: ead2c7c846b77564e9dc0c25a6f56112, type: 3}
+  - {fileID: 8300000, guid: 99332401be6eb7b43b49c3e921e3aebf, type: 3}
