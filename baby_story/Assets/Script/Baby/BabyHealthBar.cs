@@ -134,6 +134,8 @@ public class BabyHealthBar : MonoBehaviour
         // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
         playerAudio.clip = deathClip;
         playerAudio.Play();
+
+        this.GetComponent<Baby>().kill();
     
     }
 }

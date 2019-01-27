@@ -50,18 +50,12 @@ public class Baby : MonoBehaviour
         float newRotate = 0.0f;
         Vector3 rotateVector = this.transform.localRotation.eulerAngles;
         float currentRotate = rotateVector.z;
-        if (other.collider.tag == "Wall")
+        if (other.collider.tag == "Wall" || other.collider.tag == "Ball")
         {
-
             setBackRotation();
         }
-
-        if(other.collider.tag=="Ball")
-        {
-            Rigidbody rb = GetComponent<Rigidbody>();
-            rb.velocity = (this.transform.up * movingSpeed);
-        }
-        
+            // Rigidbody rb = GetComponent<Rigidbody>();
+            // rb.velocity = (this.transform.up * movingSpeed);
     }
 
 
@@ -75,9 +69,6 @@ public class Baby : MonoBehaviour
         
         
     }
-
-
-
 
     void setRotation()
     {
@@ -110,8 +101,7 @@ public class Baby : MonoBehaviour
     }
 
     private void OnMouseDown()
-    {
-        
+    { 
         setBackRotation();
         BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
         healthBar.RemoveHealth(10);
