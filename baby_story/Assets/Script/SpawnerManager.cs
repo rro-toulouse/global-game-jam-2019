@@ -15,11 +15,12 @@ public class SpawnerManager : MonoBehaviour
     List<Spawner> spawners = new List<Spawner>();
     Random random = new Random();
     GameObject[] sons;
+    bool isDead;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isDead = false;
         wall = GameObject.FindGameObjectsWithTag("Wall");
         foreach (GameObject item in wall)
         {
@@ -34,15 +35,23 @@ public class SpawnerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0.0f)
+        while (!isDead)
         {
-            sons = new GameObject[] { cupCake, tennisBall, bouncyBall, rugbyBall, homing, sissors };
-            Spawner selectedSpawn = spawners[Random.Range(0, spawners.Count)];
-            GameObject selectedObject = sons[Random.Range(0, sons.Length)];
-            float objectSpeed = Random.Range(1, 10);
-            selectedSpawn.spawn(selectedObject, objectSpeed);
-            timer = 5f;
+            timer -= Time.deltaTime;
+            if (timer <= 0.0f)
+            {
+                sons = new GameObject[] { cupCake, tennisBall, bouncyBall, rugbyBall, homing, sissors };
+                Spawner selectedSpawn = spawners[Random.Range(0, spawners.Count)];
+                GameObject selectedObject = sons[Random.Range(0, sons.Length)];
+                float objectSpeed = Random.Range(1, 10);
+                selectedSpawn.spawn(selectedObject, objectSpeed);
+                timer = 5f;
+            }
         }
+    }
+
+    void setBabysDeath()
+    {
+        isDead = true;
     }
 }
