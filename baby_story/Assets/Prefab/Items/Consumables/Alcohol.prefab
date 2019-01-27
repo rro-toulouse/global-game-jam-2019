@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
+  lifetime: 120
   maxRebounds: 20
   food: 20
 --- !u!135 &6488285826347429294

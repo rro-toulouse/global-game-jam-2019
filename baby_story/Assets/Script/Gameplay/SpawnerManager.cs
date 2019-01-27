@@ -117,8 +117,8 @@ public class SpawnerManager : MonoBehaviour
                     spawners[Random.Range(0, spawners.Count)].spawn(gun,5);
                     break;
                 default:
-                    spawners[Random.Range(0, spawners.Count)].spawn(alcohol,5);
-                    spawners[Random.Range(0, spawners.Count)].spawn(pill, 5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(diaper, 5);
                     break;
             }
             timerCycle = 30f;

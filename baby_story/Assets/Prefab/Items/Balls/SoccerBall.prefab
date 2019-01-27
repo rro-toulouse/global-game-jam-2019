@@ -92,8 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
-  maxHits: 0
+  lifetime: 120
+  maxHits: 5
   maxRebounds: 10
 --- !u!212 &7902934327653613023
 SpriteRenderer:
@@ -132,7 +132,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80a64a1dc3c638b40aafed773b5caa1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0294cf9500814144ad88a427a8f51ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
+  lifetime: 120
   maxRebounds: 0
   heal: 50
   food: 10

@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
+  lifetime: 120
   maxRebounds: 10
   healPoop: 20
 --- !u!54 &6630441085059020509
