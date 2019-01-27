@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2761349912723445008}
   - component: {fileID: 5527091072823601747}
   - component: {fileID: 8301246434579518525}
+  - component: {fileID: 7613024416588366091}
   m_Layer: 9
   m_Name: Diaper
   m_TagString: Consumable
@@ -142,3 +143,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7613024416588366091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9197079506529125745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a183c9e7faa5d4d853c92f13341001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 400
