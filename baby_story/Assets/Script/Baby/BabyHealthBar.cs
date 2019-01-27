@@ -135,6 +135,7 @@ public class BabyHealthBar : MonoBehaviour
         playerAudio.clip = deathClip;
         playerAudio.Play();
 
+        // Camera zoom animation
         this.GetComponent<Baby>().kill();
     
     }
