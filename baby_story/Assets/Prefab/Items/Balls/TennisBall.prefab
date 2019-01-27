@@ -63,8 +63,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
-  maxHits: 0
+  lifetime: 120
+  maxHits: 5
   maxRebounds: 20
 --- !u!54 &2789409556652805475
 Rigidbody:

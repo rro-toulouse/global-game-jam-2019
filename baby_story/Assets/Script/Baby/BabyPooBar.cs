@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class BabyPooBar : MonoBehaviour
 {
     public int maxPoo = 100;
-    public int startingPoo = 0;                            // The amount of health the player starts the game with.
-    public int currentPoo;                                   // The current health the player has.
-    public Slider pooSlider;                                 // Reference to the UI's health bar.
+    public int startingPoo = 0;                            // The amount of poo the player starts the game with.
+    public int currentPoo;                                   // The current poo the player has.
+    public Slider pooSlider;                                 // Reference to the UI's poo bar.
     public Image pooImage;                                   // Reference to an image to flash on the screen on being hurt.
     public AudioClip deathClip;                                 // The audio clip to play when the player dies.
     public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
 
+    public GameObject poop;
 
     Animator anim;                                              // Reference to the Animator component.
     AudioSource playerAudio;                                    // Reference to the AudioSource component.
@@ -62,7 +63,12 @@ public class BabyPooBar : MonoBehaviour
         currentPoo += amount;
 
         if (currentPoo >= maxPoo)
-            currentPoo = maxPoo;
+        {
+            var baby = GameObject.FindGameObjectWithTag("Baby");
+            var new_item = Instantiate(poop);
+            new_item.transform.position = baby.transform.position;
+            currentPoo = 0;
+        }
 
         // Set the health bar's value to the current health.
         pooSlider.value = currentPoo;

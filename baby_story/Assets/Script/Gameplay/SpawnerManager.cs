@@ -103,11 +103,6 @@ public class SpawnerManager : MonoBehaviour
                 case 1:
                     spawners[Random.Range(0, spawners.Count)].spawn(biberon, 5);
                     spawners[Random.Range(0, spawners.Count)].spawn(bouncyBall,5);
-                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
-                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
-                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
-                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
-                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
                     break;
                 case 2:
                     spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
@@ -122,8 +117,8 @@ public class SpawnerManager : MonoBehaviour
                     spawners[Random.Range(0, spawners.Count)].spawn(gun,5);
                     break;
                 default:
-                    spawners[Random.Range(0, spawners.Count)].spawn(alcohol,5);
-                    spawners[Random.Range(0, spawners.Count)].spawn(pill, 5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(diaper, 5);
                     break;
             }
             timerCycle = 30f;

@@ -80,8 +80,8 @@ MonoBehaviour:
   velX: 0
   velZ: 0
   cone: 0.4
-  lifetime: 0
-  maxHits: 0
+  lifetime: 120
+  maxHits: 5
   maxRebounds: 20
 --- !u!135 &131793364193763374
 SphereCollider:
