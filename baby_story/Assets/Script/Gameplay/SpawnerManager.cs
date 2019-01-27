@@ -103,6 +103,7 @@ public class SpawnerManager : MonoBehaviour
                 case 1:
                     spawners[Random.Range(0, spawners.Count)].spawn(biberon, 5);
                     spawners[Random.Range(0, spawners.Count)].spawn(bouncyBall,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
                     break;
                 case 2:
                     spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
