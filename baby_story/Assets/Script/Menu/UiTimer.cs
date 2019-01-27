@@ -27,4 +27,9 @@ public class UiTimer : MonoBehaviour
         guiStyle.normal.textColor = Color.red;
         GUI.Label(new Rect(10, 10, 500, 500), niceTime, guiStyle);
     }
+
+    public void StopTimer()
+    {
+        timeStarted = false;
+    }
 }

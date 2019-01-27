@@ -1066,6 +1066,16 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3217414146874850508, guid: 6f59cd1ff02384347b8a3b7070c733c6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3217414146874850508, guid: 6f59cd1ff02384347b8a3b7070c733c6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f59cd1ff02384347b8a3b7070c733c6, type: 3}
 --- !u!1 &1381935342

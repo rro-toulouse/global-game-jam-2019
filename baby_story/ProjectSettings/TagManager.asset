@@ -12,6 +12,7 @@ TagManager:
   - Consumable
   - PauseMenu
   - Daddy
+  - Timer
   layers:
   - Default
   - TransparentFX

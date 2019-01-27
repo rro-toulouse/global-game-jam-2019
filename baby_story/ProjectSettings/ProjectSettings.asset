@@ -580,10 +580,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: c8f6fdc9-95ab-43e5-9f8f-5655a7e18bd9
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: baby_story
-  organizationId: jakeur
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
