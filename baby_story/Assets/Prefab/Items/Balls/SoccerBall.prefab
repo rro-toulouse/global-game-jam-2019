@@ -94,7 +94,7 @@ MonoBehaviour:
   velZ: 0
   lifetime: 0
   maxHits: 0
-  maxRebounds: 0
+  maxRebounds: 20
 --- !u!212 &7902934327653613023
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -90,9 +90,8 @@ public class SpawnerManager : MonoBehaviour
                     selectedObject = getItem(cycle, malus, getMalusProbas(cycle));
                     break;
             }
-
-            float objectSpeed = Random.Range(3, 8);
-            selectedSpawn.spawn(selectedObject, objectSpeed);
+            
+            selectedSpawn.spawn(selectedObject, getSpeed(cycle));
             timer = getFrequence(cycle);
         }
 
@@ -103,7 +102,6 @@ public class SpawnerManager : MonoBehaviour
         }
     }
 
-    enum Type { Neutral, Conso, Malus}
 
     private float cycleTime = 20f;
     float getFrequence(int cycle)
@@ -123,23 +121,48 @@ public class SpawnerManager : MonoBehaviour
             default:
                 return .5f;
         }
-
     }
 
+    int getSpeed(int cycle)
+    {
+        switch (cycle)
+        {
+            case 0:
+                return Random.Range(3, 8);
+            case 1:
+                return Random.Range(4, 10);
+            case 2:
+                return Random.Range(5, 12);
+            case 3:
+                return Random.Range(7, 14);
+            case 4:
+                return Random.Range(10, 17);
+            default:
+                return Random.Range(12, 20);
+        }
+    }
+
+    enum Type { Neutral, Conso, Malus}
     float[] getTypeProbas(int cycle)
     {
         switch (cycle)
         {
             case 0:
-                return new float[] { 2, 1, 1 };
+                return new float[] { 1, 1, 0 };
             case 1:
-                return new float[] { 1, 1, 1 };
+                return new float[] { 1, 2, 1 };
+            case 2:
+                return new float[] { 1, 3, 2 };
+            case 3:
+                return new float[] { 1, 3, 3 };
+            case 4:
+                return new float[] { 1, 2, 3 };
             default:
                 return new float[] { 1, 1, 2 };
         }
     }
 
-
+    //neutral = new GameObject[] { tennisBall, rugbyBall, soccerBall, bouncyBall, bowlingBall};
     float[] getNeutralProbas(int cycle)
     {
         switch (cycle)
@@ -148,32 +171,52 @@ public class SpawnerManager : MonoBehaviour
                 return new float[] { 1, 0, 0, 0, 0 };
             case 1:
                 return new float[] { 1, 1, 0, 0, 0 };
+            case 2:
+                return new float[] { 2, 1, 1, 0, 0 };
+            case 3:
+                return new float[] { 2, 2, 1, 1, 0 };
+            case 4:
+                return new float[] { 0, 2, 2, 1, 1 };
             default:
-                return new float[] { 1, 1, 2, 3, 3 };
+                return new float[] { 0, 0, 2, 2, 3 };
         }
     }
 
+    //consumables = new GameObject[] { biberon, diaper, cupCake, soap, alcohol, pill };
     float[] getConsoProbas(int cycle)
     {
         switch (cycle)
         {
             case 0:
-                return new float[] { 1, 0, 0, 0, 0, 0 };
-            case 1:
                 return new float[] { 1, 1, 0, 0, 0, 0 };
+            case 1:
+                return new float[] { 1, 0, 1, 0, 0, 0 };
+            case 2:
+                return new float[] { 1, 1, 1, 1, 0, 0 };
+            case 3:
+                return new float[] { 2, 1, 2, 1, 0, 0 };
+            case 4:
+                return new float[] { 1, 1, 3, 1, 1, 1 };
             default:
-                return new float[] { 1, 1, 1, 2, 2, 3 };
+                return new float[] { 1, 1, 1, 2, 3, 3 };
         }
     }
 
+    //malus = new GameObject[] { scissors, batterie, knife, pan, vase, javel, bigBatterie, jerrycan, tidePod, gun};
     float[] getMalusProbas(int cycle)
     {
         switch (cycle)
         {
             case 0:
-                return new float[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                return new float[] { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 };
             case 1:
-                return new float[] { 5, 5, 0, 0, 0, 0, 0, 0, 0, 0 };
+                return new float[] { 2, 2, 1, 1, 0, 0, 0, 0, 0, 0 };
+            case 2:
+                return new float[] { 1, 1, 2, 2, 1, 1, 0, 0, 0, 0 };
+            case 3:
+                return new float[] { 1, 1, 2, 2, 3, 3, 1, 1, 0, 0 };
+            case 4:
+                return new float[] { 0, 0, 1, 1, 2, 2, 3, 3, 1, 1 };
             default:
                 return new float[] { 0, 0, 0, 0, 1, 1, 1, 2, 2, 3 };
         }
@@ -184,7 +227,7 @@ public class SpawnerManager : MonoBehaviour
         var sum = 0f;
         foreach(float f in probas) { sum += f; }
         var rand = Random.Range(0f, sum);
-        Debug.Log("random : " + rand + " in " + System.String.Join(", ", probas));
+        //Debug.Log("random : " + rand + " in " + System.String.Join(", ", probas));
 
         var lowThreshold = 0f;
         var upThreshold = 0f;
@@ -200,7 +243,7 @@ public class SpawnerManager : MonoBehaviour
             lowThreshold += probas[i];
 
         }
-        Debug.Log("selected : " + res);
+        //Debug.Log("selected : " + res);
         return res;
     }
 }

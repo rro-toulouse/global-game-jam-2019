@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2789409556652805476}
   - component: {fileID: 2789409556652805474}
-  - component: {fileID: 2789409556652805475}
   - component: {fileID: 5408877542056213342}
+  - component: {fileID: 2789409556652805475}
   - component: {fileID: 5022355054036503035}
   - component: {fileID: 6757871295662958873}
   - component: {fileID: 1118864195957887301}
@@ -49,22 +49,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &2789409556652805475
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2789409556652805477}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 2
 --- !u!114 &5408877542056213342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +65,23 @@ MonoBehaviour:
   velZ: 0
   lifetime: 0
   maxHits: 0
-  maxRebounds: 0
+  maxRebounds: 20
+--- !u!54 &2789409556652805475
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789409556652805477}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 2
 --- !u!135 &5022355054036503035
 SphereCollider:
   m_ObjectHideFlags: 0
