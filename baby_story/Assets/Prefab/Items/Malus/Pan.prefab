@@ -82,6 +82,7 @@ MonoBehaviour:
   lifetime: 120
   maxRebounds: 30
   damages: 20
+  food: 20
 --- !u!135 &2327300670217264673
 SphereCollider:
   m_ObjectHideFlags: 0
