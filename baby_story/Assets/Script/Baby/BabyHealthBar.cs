@@ -20,7 +20,9 @@ public class BabyHealthBar : MonoBehaviour
     bool damaged;                                               // True when the player gets damaged.
     bool healing;                                               // True when the player gets damaged.
 
-  
+    float deathCountDown = 5;
+    GameObject gameUiTimer;
+
     void Awake()
     {
         // Setting up the references.
@@ -51,6 +53,17 @@ public class BabyHealthBar : MonoBehaviour
 
         // Reset the damaged flag.
         damaged = false;
+
+        // If is dead, start Game Over menu after 5 sec. 
+        if (isDead)
+        {
+           deathCountDown -= Time.deltaTime;
+
+            if (deathCountDown <= 0.0f)
+            {
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            }
+        }
     }
 
     public void AddHealth(int amount)
@@ -101,17 +114,24 @@ public class BabyHealthBar : MonoBehaviour
 
     void Death()
     {
+        //Stop the timer
+        gameUiTimer = GameObject.FindGameObjectWithTag("Timer");
+        var gameTimer = gameUiTimer.GetComponent<UiTimer>();
+        gameTimer.StopTimer();
+
+        //Time.timeScale = 0f;
+
         // Set the death flag so this function won't be called again.
         isDead = true;
 
+       // anim.speed = 0;
+
         // Tell the animator that the player is dead.
-        anim.SetTrigger("Die");
+        anim.SetTrigger("Kill");
 
         // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
         playerAudio.clip = deathClip;
         playerAudio.Play();
-
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-
+    
     }
 }
