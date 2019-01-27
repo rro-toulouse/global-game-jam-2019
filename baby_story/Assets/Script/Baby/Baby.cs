@@ -18,9 +18,16 @@ public class Baby : MonoBehaviour
     float backDelay=1;
     bool alive=true;
 
+    float zoom = 10;
+
+    bool zooming = false;
+
+    GameObject camera; 
+    Camera cs; 
+
 
     // Transforms to act as start and end markers for the journey.
-     Quaternion startAngle;
+    Quaternion startAngle;
      Quaternion endAngle;
 
     // Movement speed in units/sec.
@@ -63,9 +70,10 @@ public class Baby : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(0, 0, 0);
         alive = false;
-        var camera = GameObject.FindGameObjectWithTag("Camera");
-        CameraScript cs = camera.GetComponent<CameraScript>();
-        cs.onCameraZoom(5,10);
+        zooming = true;
+        
+        
+        
     }
 
 
@@ -103,10 +111,10 @@ public class Baby : MonoBehaviour
 
     private void OnMouseDown()
     {
+        
         setBackRotation();
         BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
         healthBar.RemoveHealth(10);
-        this.kill();
     }
 
 
@@ -119,7 +127,10 @@ public class Baby : MonoBehaviour
         {
             timeTillChangement -= Time.deltaTime;
             backDelay -= Time.deltaTime;
+            
             Rigidbody rb = GetComponent<Rigidbody>();
+
+            
 
 
             if (inRotation)
@@ -148,11 +159,21 @@ public class Baby : MonoBehaviour
                 setBackRotation();
             }
         }
+        else
+        {
+            if (zooming && zoom>2)
+            {
+                Debug.Log(zoom);
+                zoom -= 2 * Time.deltaTime;
+                cs.orthographicSize = zoom;
+            }
+        }
         
 
     }
     void Start()
     {
-        
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        cs = camera.GetComponent<Camera>();
     }
 }

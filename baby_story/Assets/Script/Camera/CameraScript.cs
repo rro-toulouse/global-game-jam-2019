@@ -30,6 +30,7 @@ public class CameraScript : MonoBehaviour
         this.zoom = zoom;
         this.delay = time;
         inZoom = true;
+        Debug.Log("Zoom");
     }
 
     public void onCameraMooz()
