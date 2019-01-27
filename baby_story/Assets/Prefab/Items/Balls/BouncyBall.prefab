@@ -80,7 +80,7 @@ MonoBehaviour:
   velZ: 0
   lifetime: 0
   maxHits: 0
-  maxRebounds: 0
+  maxRebounds: 30
 --- !u!135 &2880271639246195711
 SphereCollider:
   m_ObjectHideFlags: 0

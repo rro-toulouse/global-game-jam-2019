@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4793905253753080083}
   - component: {fileID: 4793905253753080082}
   - component: {fileID: 4793905253753080081}
-  - component: {fileID: 4793905253753080080}
   - component: {fileID: 2889343444237723688}
+  - component: {fileID: 4793905253753080080}
   - component: {fileID: 8183573188559988276}
   m_Layer: 9
   m_Name: Pill
@@ -94,6 +94,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2889343444237723688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793905253753080086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0877134e94a30e745837ee649318ecaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velX: 0
+  velZ: 0
+  lifetime: 0
+  maxRebounds: 20
 --- !u!54 &4793905253753080080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -110,18 +126,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 2
---- !u!114 &2889343444237723688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4793905253753080086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0877134e94a30e745837ee649318ecaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &8183573188559988276
 SphereCollider:
   m_ObjectHideFlags: 0

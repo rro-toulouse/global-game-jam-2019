@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9178627022695940777}
   - component: {fileID: 9178627022695940783}
   - component: {fileID: 9178627022695940782}
-  - component: {fileID: 7878485594861724712}
+  - component: {fileID: 296798034442926466}
   - component: {fileID: 5510070292179086730}
   - component: {fileID: 8564880507185266624}
   m_Layer: 9
@@ -64,7 +64,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 2
---- !u!114 &7878485594861724712
+--- !u!114 &296798034442926466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,14 +73,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 9178627022695940776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1de73c39258665429e5506bb2aee325, type: 3}
+  m_Script: {fileID: 11500000, guid: a16b794ddb84776478e529f1400e9926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
   lifetime: 0
-  maxRebounds: 0
-  food: 0
+  maxRebounds: 20
+  heal: 10
+  food: 30
 --- !u!135 &5510070292179086730
 SphereCollider:
   m_ObjectHideFlags: 0

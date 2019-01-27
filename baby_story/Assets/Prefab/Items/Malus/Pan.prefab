@@ -79,7 +79,7 @@ MonoBehaviour:
   velX: 0
   velZ: 0
   lifetime: 0
-  maxRebounds: 0
+  maxRebounds: 30
   damages: 20
 --- !u!135 &2327300670217264673
 SphereCollider:

@@ -79,7 +79,7 @@ MonoBehaviour:
   velX: 0
   velZ: 0
   lifetime: 0
-  maxRebounds: 0
+  maxRebounds: 10
   healPoop: 100
 --- !u!135 &5527091072823601747
 SphereCollider:

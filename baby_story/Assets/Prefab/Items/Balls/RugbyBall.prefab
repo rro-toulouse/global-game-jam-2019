@@ -81,7 +81,7 @@ MonoBehaviour:
   cone: 0.4
   lifetime: 0
   maxHits: 0
-  maxRebounds: 0
+  maxRebounds: 20
 --- !u!135 &131793364193763374
 SphereCollider:
   m_ObjectHideFlags: 0

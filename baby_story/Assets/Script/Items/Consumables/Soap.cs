@@ -11,6 +11,7 @@ public class Soap : MonoBehaviour
     public int maxRebounds;
     public int healPoop;
 
+    private float timer;
     private bool evanescent;
     private bool homing = false;
     private GameObject baby;
@@ -49,15 +50,15 @@ public class Soap : MonoBehaviour
                 var rb = GetComponent<Rigidbody>();
                 rb.velocity = toBaby * rb.velocity.magnitude;
                 homing = true;
+                timer = .2f;
             }
         }
         else if (collision.collider.gameObject.tag == "Baby")
         {
             Debug.Log("baby new diaper");
-            babyPoo.RemovePoo(healPoop);
             Destroy(gameObject);
+            babyPoo.RemovePoo(healPoop);
         }
-
     }
 
     void OnMouseDown()
@@ -77,10 +78,15 @@ public class Soap : MonoBehaviour
         }
         if (homing)
         {
-            var baby = GameObject.FindGameObjectWithTag("Baby");
-            var toBaby = (baby.transform.position - transform.position).normalized;
-            var rb = GetComponent<Rigidbody>();
-            rb.velocity = toBaby * rb.velocity.magnitude;
+            timer -= Time.deltaTime;
+            if (timer <= 0.0f)
+            {
+                timer = .2f;
+                var baby = GameObject.FindGameObjectWithTag("Baby");
+                var toBaby = (baby.transform.position - transform.position).normalized;
+                var rb = GetComponent<Rigidbody>();
+                rb.velocity = toBaby * rb.velocity.magnitude;
+            }
         }
     }
 }

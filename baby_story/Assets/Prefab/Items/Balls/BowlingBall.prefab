@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 972912423390833699}
   - component: {fileID: 972912423390833698}
   - component: {fileID: 972912423390833697}
-  - component: {fileID: 972912423390833696}
   - component: {fileID: 3305008370510485665}
+  - component: {fileID: 972912423390833696}
   - component: {fileID: 7964473865082726584}
   m_Layer: 9
   m_Name: BowlingBall
@@ -94,22 +94,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &972912423390833696
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972912423390833702}
-  serializedVersion: 2
-  m_Mass: 300
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 2
 --- !u!114 &3305008370510485665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +110,23 @@ MonoBehaviour:
   velZ: 0
   lifetime: 0
   maxHits: 0
-  maxRebounds: 0
+  maxRebounds: 20
+--- !u!54 &972912423390833696
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972912423390833702}
+  serializedVersion: 2
+  m_Mass: 300
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 2
 --- !u!135 &7964473865082726584
 SphereCollider:
   m_ObjectHideFlags: 0
