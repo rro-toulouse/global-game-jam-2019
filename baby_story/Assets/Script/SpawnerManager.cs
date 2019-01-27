@@ -80,10 +80,10 @@ public class SpawnerManager : MonoBehaviour
                     selectedObject = getItem(cycle, neutral, getNeutralProbas(cycle));
                     break;
                 case Type.Conso:
-                    selectedObject = getItem(cycle, neutral, getConsoProbas(cycle));
+                    selectedObject = getItem(cycle, consumables, getConsoProbas(cycle));
                     break;
                 default:
-                    selectedObject = getItem(cycle, neutral, getMalusProbas(cycle));
+                    selectedObject = getItem(cycle, malus, getMalusProbas(cycle));
                     break;
             }
 
@@ -127,11 +127,11 @@ public class SpawnerManager : MonoBehaviour
         switch (cycle)
         {
             case 0:
-                return new float[] { 1/2, 1/4, 1/4 };
+                return new float[] { 2, 1, 1 };
             case 1:
-                return new float[] { 1/3, 1/3, 1/3 };
+                return new float[] { 1, 1, 1 };
             default:
-                return new float[] { 1/4, 1/4, 1/2 };
+                return new float[] { 1, 1, 2 };
         }
     }
 
@@ -141,11 +141,11 @@ public class SpawnerManager : MonoBehaviour
         switch (cycle)
         {
             case 0:
-                return new float[] { 1f, 0f, 0f, 0f, 0f };
+                return new float[] { 1, 0, 0, 0, 0 };
             case 1:
-                return new float[] { .5f, .5f, 0f, 0f, 0f };
+                return new float[] { 1, 1, 0, 0, 0 };
             default:
-                return new float[] { .1f, .1f, .2f, .3f, .3f };
+                return new float[] { 1, 1, 2, 3, 3 };
         }
     }
 
@@ -154,11 +154,11 @@ public class SpawnerManager : MonoBehaviour
         switch (cycle)
         {
             case 0:
-                return new float[] { 1f, 0f, 0f, 0f, 0f, 0f };
+                return new float[] { 1, 0, 0, 0, 0, 0 };
             case 1:
-                return new float[] { .5f, .5f, 0f, 0f, 0f, 0f };
+                return new float[] { 1, 1, 0, 0, 0, 0 };
             default:
-                return new float[] { .1f, .1f, .1f, .2f, .2f, 3f };
+                return new float[] { 1, 1, 1, 2, 2, 3 };
         }
     }
 
@@ -167,29 +167,36 @@ public class SpawnerManager : MonoBehaviour
         switch (cycle)
         {
             case 0:
-                return new float[] { 1f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f };
+                return new float[] { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             case 1:
-                return new float[] { .5f, .5f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f };
+                return new float[] { 5, 5, 0, 0, 0, 0, 0, 0, 0, 0 };
             default:
-                return new float[] { 0f, 0f, 0f, 0f, .1f, .1f, .1f, .2f, .2f, 3f };
+                return new float[] { 0, 0, 0, 0, 1, 1, 1, 2, 2, 3 };
         }
     }
 
     T getItem<T>(int cycle, T[] array, float[] probas)
     {
-        var rand = Random.Range(0, 1);
+        var sum = 0f;
+        foreach(float f in probas) { sum += f; }
+        var rand = Random.Range(0f, sum);
+        Debug.Log("random : " + rand + " in " + System.String.Join(", ", probas));
 
-        var chance = 0f;
+        var lowThreshold = 0f;
+        var upThreshold = 0f;
         var res = array[array.Length-1];
         for (int i=0; i< array.Length; i++)
         {
-            chance += probas[i];
-            if (rand <= chance)
+            upThreshold += probas[i];
+            if (lowThreshold <= rand && rand <= upThreshold)
             {
                 res = array[i];
                 break;
             }
+            lowThreshold += probas[i];
+
         }
+        Debug.Log("selected : " + res);
         return res;
     }
 }
