@@ -18,9 +18,16 @@ public class Baby : MonoBehaviour
     float backDelay=1;
     bool alive=true;
 
+    float zoom = 10;
+
+    bool zooming = false;
+
+    GameObject camera; 
+    Camera cs; 
+
 
     // Transforms to act as start and end markers for the journey.
-     Quaternion startAngle;
+    Quaternion startAngle;
      Quaternion endAngle;
 
     // Movement speed in units/sec.
@@ -63,6 +70,10 @@ public class Baby : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(0, 0, 0);
         alive = false;
+        zooming = true;
+        
+        
+        
     }
 
 
@@ -76,10 +87,9 @@ public class Baby : MonoBehaviour
         startAngle = this.transform.localRotation;
         endAngle = qChange;
         journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
-        Debug.Log(journeyAngle);
         startTime = Time.time;
         inRotation = true;
-        Debug.Log("Rot" + journeyAngle);
+       
     }
 
     void setBackRotation()
@@ -94,15 +104,14 @@ public class Baby : MonoBehaviour
             endAngle = qChange;
             journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
             startTime = Time.time;
-            inRotation = true;
-            Debug.Log("Back" + journeyAngle);
-            
+            inRotation = true; 
         }
 
     }
 
     private void OnMouseDown()
     {
+        
         setBackRotation();
         BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
         healthBar.RemoveHealth(10);
@@ -118,7 +127,10 @@ public class Baby : MonoBehaviour
         {
             timeTillChangement -= Time.deltaTime;
             backDelay -= Time.deltaTime;
+            
             Rigidbody rb = GetComponent<Rigidbody>();
+
+            
 
 
             if (inRotation)
@@ -147,11 +159,21 @@ public class Baby : MonoBehaviour
                 setBackRotation();
             }
         }
+        else
+        {
+            if (zooming && zoom>2)
+            {
+                Debug.Log(zoom);
+                zoom -= 2 * Time.deltaTime;
+                cs.orthographicSize = zoom;
+            }
+        }
         
 
     }
     void Start()
     {
-        
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        cs = camera.GetComponent<Camera>();
     }
 }
