@@ -33,6 +33,9 @@ public class SpawnerManager : MonoBehaviour
 
     GameObject[] wall;
     List<Spawner> spawners = new List<Spawner>();
+    Random random = new Random();
+    GameObject[] sons;
+
     GameObject[] neutral;
     GameObject[] consumables;
     GameObject[] malus;
@@ -41,6 +44,7 @@ public class SpawnerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         wall = GameObject.FindGameObjectsWithTag("Wall");
         foreach (GameObject item in wall)
         {
