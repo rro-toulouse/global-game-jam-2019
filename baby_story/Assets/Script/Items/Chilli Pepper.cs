@@ -8,13 +8,19 @@ public class ChilliPepper : MonoBehaviour
     public float velZ;
 
     public float lifetime;
-    public int maxHits;
     public int maxRebounds;
 
     private bool evanescent;
+    private GameObject baby;
+    private BabyHealthBar babyHealth;
+    private BabyPooBar babyPoo;
     // Start is called before the first frame update
     void Start()
     {
+        baby = GameObject.FindGameObjectWithTag("Baby");
+        babyHealth = baby.GetComponent<BabyHealthBar>();
+        babyPoo = baby.GetComponent<BabyPooBar>();
+
         evanescent = lifetime > 0;
         var rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(velX, 0, velZ) * rb.mass, ForceMode.Impulse);
@@ -24,15 +30,19 @@ public class ChilliPepper : MonoBehaviour
     {
         if (collision.collider.gameObject.tag == "Wall")
         {
-            if (maxRebounds > 0 && --maxRebounds == 0) Destroy(gameObject);
+            if (maxRebounds > 0 && --maxRebounds == 0)
+            {
+                Destroy(gameObject);
+            }
         }
-        else if (collision.collider.gameObject.tag == "Wall" && maxHits > 0)
+        else if (collision.collider.gameObject.tag == "Baby")
         {
-            if (maxHits > 0 && --maxHits == 0) Destroy(gameObject);
+            Debug.Log("baby cuts itself");
+            var camera = GameObject.FindGameObjectWithTag("Camera");
+            CameraScript cs = camera.GetComponent<CameraScript>();
+            cs.onCameraZoom(2, 4);
+            Destroy(gameObject);
         }
-
-        var rb = GetComponent<Rigidbody>();
-        rb.velocity *= 1.1f;
     }
 
     void OnMouseDown()
