@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClickManager
       objectReference: {fileID: 0}
+    - target: {fileID: 116404, guid: df3be5f54db2b475f973b6129d984d5b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 416404, guid: df3be5f54db2b475f973b6129d984d5b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -613,6 +617,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3225328709627821925, guid: d2b3a3535161bf642b398e3af0a1a52e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1587821797522174303, guid: d2b3a3535161bf642b398e3af0a1a52e,
         type: 3}
       propertyPath: m_TagString
@@ -657,6 +666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225328708074118251, guid: d2b3a3535161bf642b398e3af0a1a52e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1587821798690974107, guid: d2b3a3535161bf642b398e3af0a1a52e,
         type: 3}
@@ -902,16 +916,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mass
       value: 1000000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3225328709627821925, guid: d2b3a3535161bf642b398e3af0a1a52e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3225328708074118251, guid: d2b3a3535161bf642b398e3af0a1a52e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6744736928672777819, guid: d2b3a3535161bf642b398e3af0a1a52e, type: 3}
@@ -1329,6 +1333,12 @@ PrefabInstance:
       propertyPath: deathClip
       value: 
       objectReference: {fileID: 8300000, guid: 7e2a9be1e6d4a964b9cf89aeba8a7c81, type: 3}
+    - target: {fileID: 5715563415008055700, guid: c8ad0faa06be8954282abfce65bb103b,
+        type: 3}
+      propertyPath: poop
+      value: 
+      objectReference: {fileID: 9137119024410437765, guid: ed8b8721ddb4823448d6a717a62daee9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8ad0faa06be8954282abfce65bb103b, type: 3}
 --- !u!1 &1720263428
