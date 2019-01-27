@@ -531,6 +531,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba45b1a1b0e82664baa7f1c71563f11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &821405432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6406165305182289911, guid: 1dcc70002e396154fa8e278e0f038243,
+    type: 3}
+  m_PrefabInstance: {fileID: 821405428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &821405433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821405432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 1
+--- !u!114 &821405434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821405432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 821405430}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!1 &1005137069
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +826,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba45b1a1b0e82664baa7f1c71563f11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1428195278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428195276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 1428195276}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &1428195282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428195276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 1
 --- !u!1 &1687759334
 GameObject:
   m_ObjectHideFlags: 0
