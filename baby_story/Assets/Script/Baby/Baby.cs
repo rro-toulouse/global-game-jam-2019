@@ -61,14 +61,13 @@ public class Baby : MonoBehaviour
         timeInMovement+= Time.deltaTime;
         timeTillChangement -= Time.deltaTime;
         Rigidbody rb = GetComponent<Rigidbody>();
-        Debug.Log(timeTillChangement);
-        
-        if(timeTillChangement <= 0 || (agent.velocity== new Vector3(0,0,0) && timeInMovement>2))
+        if(timeTillChangement <= 0 || (agent.velocity== new Vector3(0,0,0) && timeInMovement>1))
         {
+            Debug.Log(timeTillChangement);
             destination = new Vector3(Random.Range(lowX, highX), 0, Random.Range(lowZ, highZ));
             Debug.Log(destination + "||" + this.transform.position);
             agent.SetDestination(destination);
-            timeTillChangement = Random.Range(7.0f, 15.0f);
+            timeTillChangement = Random.Range(5.0f, 12.0f);
             timeInMovement = 0;
             
         }
