@@ -14,6 +14,8 @@ public class Baby : MonoBehaviour
     float currentOrientation;
     Vector3 destination = new Vector3();
     public float movingSpeed = 2.0f;
+    public float minChangeDirectionTime = 4;
+    public float maxChangeDirectionTime = 8;
     bool inRotation=false;
 
 
@@ -44,7 +46,7 @@ public class Baby : MonoBehaviour
         if (other.collider.tag == "Wall")
         {
 
-            setRotation();
+            setBackRotation();
         }
 
         if(other.collider.tag=="Ball")
@@ -60,7 +62,22 @@ public class Baby : MonoBehaviour
 
     void setRotation()
     {
+
         Vector3 turn = new Vector3(90, Random.Range(0.0f, 360.0f), 0);
+        Quaternion qChange = Quaternion.Euler(turn);
+        startAngle = this.transform.localRotation;
+        endAngle = qChange;
+        journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
+        Debug.Log(journeyAngle);
+        startTime = Time.time;
+        inRotation = true;
+    }
+
+    void setBackRotation()
+    {
+        Vector3 currentRotate=transform.localRotation.eulerAngles;
+
+        Vector3 turn = currentRotate + new Vector3(0, Random.Range(90,270), 0);
         Quaternion qChange = Quaternion.Euler(turn);
         startAngle = this.transform.localRotation;
         endAngle = qChange;
@@ -72,7 +89,7 @@ public class Baby : MonoBehaviour
 
     private void OnMouseDown()
     {
-        setRotation();
+        setBackRotation();
     }
 
 
@@ -93,7 +110,7 @@ public class Baby : MonoBehaviour
             {
 
                 inRotation = false;
-                timeTillChangement = Random.Range(4, 8);
+                timeTillChangement = Random.Range(minChangeDirectionTime, maxChangeDirectionTime);
                
 
                 
