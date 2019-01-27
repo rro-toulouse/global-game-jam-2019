@@ -14,9 +14,8 @@ public class Baby : MonoBehaviour
     float currentOrientation;
     Vector3 destination = new Vector3();
     public float movingSpeed = 2.0f;
-    public float minChangeDirectionTime = 4;
-    public float maxChangeDirectionTime = 8;
     bool inRotation=false;
+    float backDelay=1;
 
 
     // Transforms to act as start and end markers for the journey.
@@ -62,7 +61,7 @@ public class Baby : MonoBehaviour
 
     void setRotation()
     {
-
+        
         Vector3 turn = new Vector3(90, Random.Range(0.0f, 360.0f), 0);
         Quaternion qChange = Quaternion.Euler(turn);
         startAngle = this.transform.localRotation;
@@ -71,20 +70,27 @@ public class Baby : MonoBehaviour
         Debug.Log(journeyAngle);
         startTime = Time.time;
         inRotation = true;
+        Debug.Log("Rot" + journeyAngle);
     }
 
     void setBackRotation()
     {
-        Vector3 currentRotate=transform.localRotation.eulerAngles;
+        if (backDelay < 0)
+        {
+            backDelay = 2;
+            Vector3 currentRotate = transform.localRotation.eulerAngles;
+            Vector3 turn = currentRotate + new Vector3(0, Random.Range(90.0f, 270.0f), 0);
+            Quaternion qChange = Quaternion.Euler(turn);
+            startAngle = this.transform.localRotation;
+            endAngle = qChange;
+            journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
+            startTime = Time.time;
+            inRotation = true;
+            Debug.Log("Back" + journeyAngle);
+            BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
+            healthBar.RemoveHealth(10);
+        }
 
-        Vector3 turn = currentRotate + new Vector3(0, Random.Range(90,270), 0);
-        Quaternion qChange = Quaternion.Euler(turn);
-        startAngle = this.transform.localRotation;
-        endAngle = qChange;
-        journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
-        Debug.Log(journeyAngle);
-        startTime = Time.time;
-        inRotation = true;
     }
 
     private void OnMouseDown()
@@ -94,10 +100,14 @@ public class Baby : MonoBehaviour
 
 
 
+
+
     void Update()
     {
         timeTillChangement -= Time.deltaTime;
+        backDelay-= Time.deltaTime;
         Rigidbody rb = GetComponent<Rigidbody>();
+
 
         if (inRotation)
         {
@@ -105,12 +115,13 @@ public class Baby : MonoBehaviour
             float distCovered = (Time.time - startTime) * rotateSpeed;
             float fracJourney = distCovered / journeyAngle;
            
+           
             transform.localRotation = Quaternion.Lerp(startAngle, endAngle, fracJourney);
             if (fracJourney >= 1)
             {
 
                 inRotation = false;
-                timeTillChangement = Random.Range(minChangeDirectionTime, maxChangeDirectionTime);
+                timeTillChangement = Random.Range(4, 8);
                
 
                 
@@ -119,9 +130,9 @@ public class Baby : MonoBehaviour
 
             }
         }
-        if (timeTillChangement <= 0 && !inRotation)
+        if (timeTillChangement <= 0 && !inRotation  )
         {
-            setRotation();
+            setBackRotation();
         }
         
 
