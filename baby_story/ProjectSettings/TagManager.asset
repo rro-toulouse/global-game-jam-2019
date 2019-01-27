@@ -14,6 +14,7 @@ TagManager:
   - Daddy
   - Ball
   - Timer
+  - Credits
   layers:
   - Default
   - TransparentFX

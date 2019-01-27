@@ -27,12 +27,8 @@ public class ButtonHandler : MonoBehaviour
 
     public void creditsButton()
     {
-        if (setCreditsVisibility(!creditsActive))
-        {
-            creditsActive = !creditsActive;
-            if (setHighscoreVisibility(false))
-                highscoreActive = false;
-        }
+        creditsActive = !creditsActive;
+        GameObject.FindGameObjectWithTag("Credits").GetComponent<Image>().enabled = creditsActive;
     }
 
     public void quitButton()
