@@ -64,7 +64,7 @@ MonoBehaviour:
   velX: 0
   velZ: 0
   lifetime: 0
-  maxRebounds: 20
+  maxRebounds: 0
 --- !u!54 &4793905253753080080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81,22 +81,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 2
---- !u!114 &2889343444237723688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4793905253753080086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0877134e94a30e745837ee649318ecaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velX: 0
-  velZ: 0
-  lifetime: 0
-  maxRebounds: 0
 --- !u!135 &8183573188559988276
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -171,3 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
+  sampleList:
+  - {fileID: 8300000, guid: 7fdd8e2613335704eb48c41bd18622ac, type: 3}
+  - {fileID: 8300000, guid: e0223cb3db4276e44899b99aab5f36fa, type: 3}
+  - {fileID: 8300000, guid: f48d5f28e25f5a64989355d2e32836b0, type: 3}

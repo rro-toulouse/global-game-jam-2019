@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7587954506456961215}
   - component: {fileID: 4280339442941619075}
   - component: {fileID: 4447132231540907108}
+  - component: {fileID: 5683499546563943695}
   m_Layer: 9
   m_Name: GlassShard
   m_TagString: Consumable
@@ -156,3 +157,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5683499546563943695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339352866138222133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a183c9e7faa5d4d853c92f13341001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
+  sampleList:
+  - {fileID: 8300000, guid: 7fdd8e2613335704eb48c41bd18622ac, type: 3}
+  - {fileID: 8300000, guid: e0223cb3db4276e44899b99aab5f36fa, type: 3}
+  - {fileID: 8300000, guid: f48d5f28e25f5a64989355d2e32836b0, type: 3}
