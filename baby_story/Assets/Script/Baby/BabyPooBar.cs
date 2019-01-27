@@ -66,7 +66,6 @@ public class BabyPooBar : MonoBehaviour
         {
             var baby = GameObject.FindGameObjectWithTag("Baby");
             var new_item = Instantiate(poop);
-            new_item.transform.position = baby.transform.position;
             currentPoo = 0;
         }
 

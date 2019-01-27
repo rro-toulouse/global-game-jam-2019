@@ -16,6 +16,7 @@ public class Baby : MonoBehaviour
     public float movingSpeed = 2.0f;
     bool inRotation=false;
     float backDelay=1;
+    bool alive=true;
 
 
     // Transforms to act as start and end markers for the journey.
@@ -57,6 +58,14 @@ public class Baby : MonoBehaviour
     }
 
 
+    public void kill()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0, 0, 0);
+        alive = false;
+    }
+
+
 
 
     void setRotation()
@@ -77,7 +86,7 @@ public class Baby : MonoBehaviour
     {
         if (backDelay < 0)
         {
-            backDelay = 2;
+            backDelay = 0.5f;
             Vector3 currentRotate = transform.localRotation.eulerAngles;
             Vector3 turn = currentRotate + new Vector3(0, Random.Range(90.0f, 270.0f), 0);
             Quaternion qChange = Quaternion.Euler(turn);
@@ -87,8 +96,7 @@ public class Baby : MonoBehaviour
             startTime = Time.time;
             inRotation = true;
             Debug.Log("Back" + journeyAngle);
-            BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
-            healthBar.RemoveHealth(10);
+            
         }
 
     }
@@ -96,6 +104,8 @@ public class Baby : MonoBehaviour
     private void OnMouseDown()
     {
         setBackRotation();
+        BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
+        healthBar.RemoveHealth(10);
     }
 
 
@@ -104,35 +114,38 @@ public class Baby : MonoBehaviour
 
     void Update()
     {
-        timeTillChangement -= Time.deltaTime;
-        backDelay-= Time.deltaTime;
-        Rigidbody rb = GetComponent<Rigidbody>();
-
-
-        if (inRotation)
+        if (alive)
         {
-            rb.velocity = new Vector3(0,0,0);
-            float distCovered = (Time.time - startTime) * rotateSpeed;
-            float fracJourney = distCovered / journeyAngle;
-           
-           
-            transform.localRotation = Quaternion.Lerp(startAngle, endAngle, fracJourney);
-            if (fracJourney >= 1)
+            timeTillChangement -= Time.deltaTime;
+            backDelay -= Time.deltaTime;
+            Rigidbody rb = GetComponent<Rigidbody>();
+
+
+            if (inRotation)
             {
+                rb.velocity = new Vector3(0, 0, 0);
+                float distCovered = (Time.time - startTime) * rotateSpeed;
+                float fracJourney = distCovered / journeyAngle;
 
-                inRotation = false;
-                timeTillChangement = Random.Range(4, 8);
-               
 
-                
+                transform.localRotation = Quaternion.Lerp(startAngle, endAngle, fracJourney);
+                if (fracJourney >= 1)
+                {
 
-                rb.velocity = (this.transform.up*movingSpeed);
+                    inRotation = false;
+                    timeTillChangement = Random.Range(4, 8);
 
+
+
+
+                    rb.velocity = (this.transform.up * movingSpeed);
+
+                }
             }
-        }
-        if (timeTillChangement <= 0 && !inRotation  )
-        {
-            setBackRotation();
+            if (timeTillChangement <= 0 && !inRotation)
+            {
+                setBackRotation();
+            }
         }
         
 
