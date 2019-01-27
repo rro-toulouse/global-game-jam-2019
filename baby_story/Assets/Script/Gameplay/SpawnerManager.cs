@@ -98,6 +98,34 @@ public class SpawnerManager : MonoBehaviour
         if (timerCycle <= 0f)
         {
             cycle++;
+            switch (cycle)
+            {
+                case 1:
+                    spawners[Random.Range(0, spawners.Count)].spawn(biberon, 5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(bouncyBall,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
+                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
+                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
+                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
+                    spawners[Random.Range(0, spawners.Count)].spawn(vase,10);
+                    break;
+                case 2:
+                    spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(bowlingBall,5);
+                    break;
+                case 3:
+                    spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(bigBatterie,5);
+                    break;
+                case 4:
+                    spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(gun,5);
+                    break;
+                default:
+                    spawners[Random.Range(0, spawners.Count)].spawn(alcohol,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(pill, 5);
+                    break;
+            }
             timerCycle = 30f;
         }
     }
@@ -109,14 +137,19 @@ public class SpawnerManager : MonoBehaviour
         switch (cycle)
         {
             case 0:
-                return 5f;
             case 1:
-                return 4f;
+                return 5f;
             case 2:
-                return 3f;
             case 3:
-                return 2f;
+                return 4f;
             case 4:
+            case 5:
+                return 3f;
+            case 6:
+            case 7:
+                return 2f;
+            case 8:
+            case 9:
                 return 1f;
             default:
                 return .5f;
@@ -130,15 +163,15 @@ public class SpawnerManager : MonoBehaviour
             case 0:
                 return Random.Range(3, 8);
             case 1:
-                return Random.Range(4, 10);
+                return Random.Range(3, 9);
             case 2:
-                return Random.Range(5, 12);
+                return Random.Range(3, 10);
             case 3:
-                return Random.Range(7, 14);
+                return Random.Range(3, 11);
             case 4:
-                return Random.Range(10, 17);
+                return Random.Range(3, 13);
             default:
-                return Random.Range(12, 20);
+                return Random.Range(3, 15);
         }
     }
 

@@ -30,7 +30,7 @@ public class Fragmentation : MonoBehaviour
             var normal = collision.GetContact(0).normal;
 
             GameObject son;
-            float angle = (sonCount == 1) ? 1 : .6f;
+            float angle = (sonCount == 1) ? 1 : .6f + Random.Range(-.05f,.05f);
             var angleStep = (sonCount == 1) ? 1: (.8f / (sonCount-1));
             for (int i=0; i< sonCount; i++)
             {
@@ -50,7 +50,8 @@ public class Fragmentation : MonoBehaviour
     void OnMouseDown()
     {
         var rb = GetComponent<Rigidbody>();
-        rb.velocity = Quaternion.Euler(0, 180, 0) * rb.velocity;
+        var baby = GameObject.FindGameObjectWithTag("Baby");
+        rb.velocity = (transform.position - baby.transform.position).normalized * rb.velocity.magnitude;
     }
 
     // Update is called once per frame

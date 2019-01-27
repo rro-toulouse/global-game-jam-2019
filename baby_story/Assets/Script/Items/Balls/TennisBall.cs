@@ -35,7 +35,8 @@ public class TennisBall : MonoBehaviour
     void OnMouseDown()
     {
         var rb = GetComponent<Rigidbody>();
-        rb.velocity = Quaternion.Euler(0, 180, 0) * rb.velocity;
+        var baby = GameObject.FindGameObjectWithTag("Baby");
+        rb.velocity = (transform.position - baby.transform.position).normalized * rb.velocity.magnitude;
     }
 
     // Update is called once per frame
