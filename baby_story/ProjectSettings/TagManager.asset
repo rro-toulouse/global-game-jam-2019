@@ -12,6 +12,7 @@ TagManager:
   - Consumable
   - PauseMenu
   - Daddy
+  - Ball
   layers:
   - Default
   - TransparentFX
