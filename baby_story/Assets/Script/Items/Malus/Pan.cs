@@ -10,6 +10,7 @@ public class Pan : MonoBehaviour
     public float lifetime;
     public int maxRebounds;
     public int damages;
+    public int food;
 
     private bool evanescent;
     private GameObject baby;
@@ -40,6 +41,7 @@ public class Pan : MonoBehaviour
         {
             Debug.Log("baby cuts itself");
             babyHealth.RemoveHealth(damages);
+            babyPoo.AddPoo(food);
             Destroy(gameObject);
         }
     }
