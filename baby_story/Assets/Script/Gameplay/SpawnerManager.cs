@@ -105,7 +105,7 @@ public class SpawnerManager : MonoBehaviour
                     spawners[Random.Range(0, spawners.Count)].spawn(bouncyBall,5);
                     break;
                 case 2:
-                    spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(soap,5);
                     spawners[Random.Range(0, spawners.Count)].spawn(bowlingBall,5);
                     break;
                 case 3:
@@ -113,7 +113,7 @@ public class SpawnerManager : MonoBehaviour
                     spawners[Random.Range(0, spawners.Count)].spawn(bigBatterie,5);
                     break;
                 case 4:
-                    spawners[Random.Range(0, spawners.Count)].spawn(biberon,5);
+                    spawners[Random.Range(0, spawners.Count)].spawn(soap, 5);
                     spawners[Random.Range(0, spawners.Count)].spawn(gun,5);
                     break;
                 default:
@@ -222,7 +222,7 @@ public class SpawnerManager : MonoBehaviour
             case 2:
                 return new float[] { 1, 1, 1, 1, 0, 0 };
             case 3:
-                return new float[] { 2, 1, 2, 1, 0, 0 };
+                return new float[] { 1, 1, 2, 1, 0, 0 };
             case 4:
                 return new float[] { 1, 1, 3, 1, 1, 1 };
             default:

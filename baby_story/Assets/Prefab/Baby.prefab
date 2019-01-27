@@ -145,6 +145,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 0000bd92c4356bf40970b59d8aeef910, type: 3}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  poop: {fileID: 9137119024410437765, guid: ed8b8721ddb4823448d6a717a62daee9, type: 3}
 --- !u!114 &2170077870819124374
 MonoBehaviour:
   m_ObjectHideFlags: 0

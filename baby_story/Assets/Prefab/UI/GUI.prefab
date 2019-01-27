@@ -1027,10 +1027,10 @@ GameObject:
   - component: {fileID: 6448941616158484141}
   m_Layer: 5
   m_Name: Timer
-  m_TagString: Untagged
+  m_TagString: Timer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &7903126182369973966
 RectTransform:
@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f077ed1cdaf53bf4eb635215ee740ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeStarted: 1
 --- !u!1 &4656036664960242864
 GameObject:
   m_ObjectHideFlags: 0
