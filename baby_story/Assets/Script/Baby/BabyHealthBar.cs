@@ -114,6 +114,8 @@ public class BabyHealthBar : MonoBehaviour
 
     void Death()
     {
+        GetComponent<BoxCollider>().enabled = false;
+
         //Stop the timer
         gameUiTimer = GameObject.FindGameObjectWithTag("Timer");
         var gameTimer = gameUiTimer.GetComponent<UiTimer>();
