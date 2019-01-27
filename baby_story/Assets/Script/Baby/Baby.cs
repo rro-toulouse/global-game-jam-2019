@@ -63,6 +63,9 @@ public class Baby : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(0, 0, 0);
         alive = false;
+        var camera = GameObject.FindGameObjectWithTag("Camera");
+        CameraScript cs = camera.GetComponent<CameraScript>();
+        cs.onCameraZoom(5,10);
     }
 
 
@@ -76,10 +79,9 @@ public class Baby : MonoBehaviour
         startAngle = this.transform.localRotation;
         endAngle = qChange;
         journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
-        Debug.Log(journeyAngle);
         startTime = Time.time;
         inRotation = true;
-        Debug.Log("Rot" + journeyAngle);
+       
     }
 
     void setBackRotation()
@@ -94,9 +96,7 @@ public class Baby : MonoBehaviour
             endAngle = qChange;
             journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
             startTime = Time.time;
-            inRotation = true;
-            Debug.Log("Back" + journeyAngle);
-            
+            inRotation = true; 
         }
 
     }
@@ -106,6 +106,7 @@ public class Baby : MonoBehaviour
         setBackRotation();
         BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
         healthBar.RemoveHealth(10);
+        this.kill();
     }
 
 
