@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: baby_0
     21300002: baby_1
+    21300004: baby_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -62,7 +63,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -73,7 +74,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -84,7 +85,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,18 +101,18 @@ TextureImporter:
       name: baby_0
       rect:
         serializedVersion: 2
-        x: 141
-        y: 48
-        width: 206
-        height: 406
+        x: 30
+        y: 81
+        width: 201
+        height: 380
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9b60c5009ea8b24faf2a140b45d597d
+      spriteID: 011b7b6f787772a498765e8911dbbd3b
       vertices: []
       indices: 
       edges: []
@@ -120,18 +121,38 @@ TextureImporter:
       name: baby_1
       rect:
         serializedVersion: 2
-        x: 676
-        y: 48
-        width: 206
-        height: 406
+        x: 265
+        y: 81
+        width: 201
+        height: 380
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea399ccd2ab5d34f8ed696b5be38c33
+      spriteID: 04e237ccc1e13134a938c058b7785c7a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baby_2
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 62
+        width: 247
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6453de0ce25bb074b98bfbcdbce81f09
       vertices: []
       indices: 
       edges: []
@@ -139,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8f86c20d043bfc641a45a3d9d17b7434
+    spriteID: 4c6ddba009e415841b79179866a8a8d2
     vertices: []
     indices: 
     edges: []
