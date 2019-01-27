@@ -224,9 +224,9 @@ public class SpawnerManager : MonoBehaviour
             case 3:
                 return new float[] { 1, 1, 2, 1, 0, 0 };
             case 4:
-                return new float[] { 1, 1, 3, 1, 1, 1 };
+                return new float[] { 1, 1, 3, 1, 1, 0 };
             default:
-                return new float[] { 1, 1, 1, 2, 3, 3 };
+                return new float[] { 1, 1, 1, 2, 3, 0 };
         }
     }
 
@@ -244,9 +244,9 @@ public class SpawnerManager : MonoBehaviour
             case 3:
                 return new float[] { 1, 1, 2, 2, 3, 3, 1, 1, 0, 0 };
             case 4:
-                return new float[] { 0, 0, 1, 1, 2, 2, 3, 3, 1, 1 };
+                return new float[] { 0, 0, 1, 1, 2, 2, 3, 3, 0, 1 };
             default:
-                return new float[] { 0, 0, 0, 0, 1, 1, 1, 2, 2, 3 };
+                return new float[] { 0, 0, 0, 0, 1, 1, 1, 2, 0, 3 };
         }
     }
 
