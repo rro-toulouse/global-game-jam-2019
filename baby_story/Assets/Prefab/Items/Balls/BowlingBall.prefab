@@ -111,7 +111,7 @@ MonoBehaviour:
   velZ: 0
   lifetime: 0
   maxHits: 0
-  maxRebounds: 20
+  maxRebounds: 10
 --- !u!54 &972912423390833696
 Rigidbody:
   m_ObjectHideFlags: 0
