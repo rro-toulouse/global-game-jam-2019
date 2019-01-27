@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
+  lifetime: 120
   maxRebounds: 10
   damages: 50
 --- !u!54 &7221124601825881975

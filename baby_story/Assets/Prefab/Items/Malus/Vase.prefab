@@ -94,7 +94,7 @@ MonoBehaviour:
   velZ: 0
   sons: {fileID: 3339352866138222133, guid: 176fffc5d2aa0ba4f952cca1edc5a1f6, type: 3}
   sonCount: 5
-  lifetime: 0
+  lifetime: 120
   maxHits: 0
 --- !u!212 &1579899010248823807
 SpriteRenderer:
