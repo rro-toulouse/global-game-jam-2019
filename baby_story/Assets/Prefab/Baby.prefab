@@ -203,8 +203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b5179123d47c749a1f1fcd1e06930f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 2
-  rotateSpeed: 1000
+  movingSpeed: 4
+  minChangeDirectionTime: 4
+  maxChangeDirectionTime: 8
+  rotateSpeed: 400
 --- !u!82 &7365181708191703343
 AudioSource:
   m_ObjectHideFlags: 0
@@ -314,4 +316,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingSpeed: 2
+  minChangeDirectionTime: 4
+  maxChangeDirectionTime: 8
   rotateSpeed: 100
