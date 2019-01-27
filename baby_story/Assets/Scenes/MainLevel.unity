@@ -176,8 +176,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 16.09
+  orthographic: 1
+  orthographic size: 7.51
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -338,7 +338,7 @@ PrefabInstance:
     - target: {fileID: 5043167980496026035, guid: b4372962813ede74b8fa808be3b82e13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5043167980496026035, guid: b4372962813ede74b8fa808be3b82e13,
         type: 3}
@@ -697,6 +697,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2706278859318129926, guid: 6f59cd1ff02384347b8a3b7070c733c6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2706278859239494276, guid: 6f59cd1ff02384347b8a3b7070c733c6,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -748,7 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e5175c6e259c140ab905774a20f787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTimer: 3
+  defaultTimer: 1
   cupCake: {fileID: 9178627022695940776, guid: 1deffb5baef44964593e77a084fc714a, type: 3}
   tennisBall: {fileID: 2789409556652805477, guid: e3913b2faa5e3e9488fbf430524cd3f3,
     type: 3}
@@ -830,7 +835,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2030695840 stripped
 MonoBehaviour:
@@ -943,5 +948,20 @@ PrefabInstance:
       propertyPath: pooImage
       value: 
       objectReference: {fileID: 502249085}
+    - target: {fileID: 8924936336694854420, guid: 7f5eb36b6ef07964a8d039d1ce92071c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924936336694854420, guid: 7f5eb36b6ef07964a8d039d1ce92071c,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003798856319170199, guid: 7f5eb36b6ef07964a8d039d1ce92071c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f5eb36b6ef07964a8d039d1ce92071c, type: 3}
