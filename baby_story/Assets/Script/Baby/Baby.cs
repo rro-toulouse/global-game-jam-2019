@@ -12,12 +12,24 @@ public class Baby : MonoBehaviour
     float yNextDoor;
     int moveInRoom;
     float currentOrientation;
-    public NavMeshAgent agent;
     Vector3 destination = new Vector3();
-    public float lowZ;
-    public float highZ;
-    public float lowX;
-    public float highX;
+    public float movingSpeed = 2.0f;
+    bool inRotation=false;
+    float backDelay=1;
+
+
+    // Transforms to act as start and end markers for the journey.
+     Quaternion startAngle;
+     Quaternion endAngle;
+
+    // Movement speed in units/sec.
+    public float rotateSpeed = 1000.0F;
+
+    // Time when the movement started.
+    private float startTime;
+
+    // Total distance between the markers.
+    private float journeyAngle;
 
 
 
@@ -26,54 +38,107 @@ public class Baby : MonoBehaviour
     private void OnCollisionEnter(Collision other)
 
     {
-       /* Debug.Log("Collision1");
+        Debug.Log("Collision");
         float newRotate = 0.0f;
-        float currentRotate=this.transform.localRotation.y;
+        Vector3 rotateVector = this.transform.localRotation.eulerAngles;
+        float currentRotate = rotateVector.z;
         if (other.collider.tag == "Wall")
         {
-            newRotate = currentRotate <= 180 ? currentRotate + 90 : currentRotate - 90;
-            this.transform.Rotate(new Vector3(0, newRotate, 0));
-            Rigidbody rb = GetComponent<Rigidbody>();
 
-            rb.velocity = (transform.forward*2);
-            Debug.Log("Collision2");
-        }*/
-    }
-    
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other.name);
-        
-        if (other.tag == "Wall")
-        {
-            
-            Vector3 triScale = other.transform.localScale;
-            currentRoomSize = triScale.x + triScale.z;
-            moveInRoom = 0;
-            
+            setBackRotation();
         }
+
+        if(other.collider.tag=="Ball")
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.velocity = (this.transform.up * movingSpeed);
+        }
+        
     }
+
+
+
+
+    void setRotation()
+    {
+        
+        Vector3 turn = new Vector3(90, Random.Range(0.0f, 360.0f), 0);
+        Quaternion qChange = Quaternion.Euler(turn);
+        startAngle = this.transform.localRotation;
+        endAngle = qChange;
+        journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
+        Debug.Log(journeyAngle);
+        startTime = Time.time;
+        inRotation = true;
+        Debug.Log("Rot" + journeyAngle);
+    }
+
+    void setBackRotation()
+    {
+        if (backDelay < 0)
+        {
+            backDelay = 2;
+            Vector3 currentRotate = transform.localRotation.eulerAngles;
+            Vector3 turn = currentRotate + new Vector3(0, Random.Range(90.0f, 270.0f), 0);
+            Quaternion qChange = Quaternion.Euler(turn);
+            startAngle = this.transform.localRotation;
+            endAngle = qChange;
+            journeyAngle = Mathf.Abs(startAngle.eulerAngles.y - endAngle.eulerAngles.y);
+            startTime = Time.time;
+            inRotation = true;
+            Debug.Log("Back" + journeyAngle);
+            BabyHealthBar healthBar = GetComponent<BabyHealthBar>();
+            healthBar.RemoveHealth(10);
+        }
+
+    }
+
+    private void OnMouseDown()
+    {
+        setBackRotation();
+    }
+
+
+
+
 
     void Update()
     {
-       
-        timeInMovement+= Time.deltaTime;
         timeTillChangement -= Time.deltaTime;
+        backDelay-= Time.deltaTime;
         Rigidbody rb = GetComponent<Rigidbody>();
-        if(timeTillChangement <= 0 || (agent.velocity== new Vector3(0,0,0) && timeInMovement>1))
+
+
+        if (inRotation)
         {
-            Debug.Log(timeTillChangement);
-            destination = new Vector3(Random.Range(lowX, highX), 0, Random.Range(lowZ, highZ));
-            Debug.Log(destination + "||" + this.transform.position);
-            agent.SetDestination(destination);
-            timeTillChangement = Random.Range(5.0f, 12.0f);
-            timeInMovement = 0;
-            
+            rb.velocity = new Vector3(0,0,0);
+            float distCovered = (Time.time - startTime) * rotateSpeed;
+            float fracJourney = distCovered / journeyAngle;
+           
+           
+            transform.localRotation = Quaternion.Lerp(startAngle, endAngle, fracJourney);
+            if (fracJourney >= 1)
+            {
+
+                inRotation = false;
+                timeTillChangement = Random.Range(4, 8);
+               
+
+                
+
+                rb.velocity = (this.transform.up*movingSpeed);
+
+            }
         }
+        if (timeTillChangement <= 0 && !inRotation  )
+        {
+            setBackRotation();
+        }
+        
+
     }
-     void Start()
+    void Start()
     {
-        Debug.Log("Creation");
+        
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UiTimer : MonoBehaviour
 {
     public static float timer;
-    public static bool timeStarted = true;
+    public bool timeStarted = true;
     private GUIStyle guiStyle = new GUIStyle();
 
     void Update()

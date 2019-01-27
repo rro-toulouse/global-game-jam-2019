@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7159920513012744635}
   m_Layer: 9
   m_Name: SoccerBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,9 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
-  maxHits: 0
-  maxRebounds: 20
+  lifetime: 120
+  maxHits: 5
+  maxRebounds: 10
 --- !u!212 &7902934327653613023
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80a64a1dc3c638b40aafed773b5caa1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0294cf9500814144ad88a427a8f51ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,3 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
+  sampleList:
+  - {fileID: 8300000, guid: 645e925659803c04c8d6119c45b2f306, type: 3}
+  - {fileID: 8300000, guid: ead2c7c846b77564e9dc0c25a6f56112, type: 3}
+  - {fileID: 8300000, guid: 99332401be6eb7b43b49c3e921e3aebf, type: 3}

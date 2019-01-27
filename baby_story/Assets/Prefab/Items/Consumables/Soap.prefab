@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
+  lifetime: 120
   maxRebounds: 10
   healPoop: 20
 --- !u!54 &6630441085059020509
@@ -156,3 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
+  sampleList:
+  - {fileID: 8300000, guid: 4daec51c106574542bf1bf8d741509fe, type: 3}
+  - {fileID: 8300000, guid: d7872db267d49de4f990182b71d7d771, type: 3}
+  - {fileID: 8300000, guid: 3e4652028871a6245aa9df6e9dbe1df6, type: 3}

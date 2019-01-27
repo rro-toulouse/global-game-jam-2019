@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velX: 0
   velZ: 0
-  lifetime: 0
+  lifetime: 120
   maxRebounds: 30
   damages: 80
 --- !u!135 &8758891854158353303
@@ -156,3 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 400
+  sampleList:
+  - {fileID: 8300000, guid: 7fdd8e2613335704eb48c41bd18622ac, type: 3}
+  - {fileID: 8300000, guid: e0223cb3db4276e44899b99aab5f36fa, type: 3}
+  - {fileID: 8300000, guid: f48d5f28e25f5a64989355d2e32836b0, type: 3}
